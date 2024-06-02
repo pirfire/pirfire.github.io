@@ -8,7 +8,7 @@ body {
 
 .sidenav {
     width: 250px;
-    background-color: #111;
+    background-color: #393939;
     height: 80vh;
     position: fixed;
     top: 20px;
@@ -22,6 +22,7 @@ body {
     border-bottom-right-radius: 20px; /* Add some roundness to the bottom-right corner */
     border-top-left-radius: 20px; /* Add some roundness to the top-right corner */
     border-bottom-left-radius: 20px; /* Add some roundness to the bottom-right corner */
+    transition: width 0.3s, transform 0.3s;
 }
 
 .sidenav img {
@@ -36,7 +37,7 @@ body {
 }
 
 .sidenav a {
-    padding: 10px 15px;
+    padding: 10px 5px;
     text-decoration: none;
     font-size: 18px;
     color: white;
@@ -97,7 +98,7 @@ tr:hover {
 footer {
     text-align: center;
     padding: 0px;
-    background-color: #111;
+    background-color: #393939;
     color: white;
     position: fixed;
     width: 100%;
@@ -106,4 +107,37 @@ footer {
     border-top-right-radius: 20px; /* Add some roundness to the top-right corner */
     border-top-left-radius: 20px; /* Add some roundness to the bottom-right corner */
     
+}
+
+.menu-button {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .sidenav {
+        position: absolute;
+        transform: translateX(-100%);
+    }
+
+    .sidenav.show {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .menu-button {
+        display: block;
+    }
 }

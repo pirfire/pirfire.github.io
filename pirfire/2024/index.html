@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <button class="menu-button" onclick="toggleMenu()">☰Menu</button>
+    
     <div id="sidebar-container"></div>
-
     <div class="main-content" id="main-content">
         
     </div>
@@ -40,6 +41,12 @@
                 // Load initial content
                 loadContent('home.html');
             });
+
+        // Show or hide the sidebar  
+        function toggleMenu() {
+            const sidenav = document.querySelector('.sidenav');
+            sidenav.classList.toggle('show');
+        }
     </script>
 </body>
 </html>
