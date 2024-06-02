@@ -1,9 +1,6 @@
 ---
-layout: default
-title: Home
+title: Overview
 ---
-
-## Overview
 
 The aim of the proposed shared tasks in FIRE 2024 is to elaborate on activities in the evaluation of Personalised Information Retrieval (PIR). Personalisation in Information Retrieval (IR) remains an important topic both in research and the development of practical applications for Information Retrieval. However, suitable means of evaluation of PIR remain an underexplored topic. PIR-FIRE aims to bring together researchers with a common interest in developing and evaluating novel methods for personalised operation of novel information retrieval applications.
 

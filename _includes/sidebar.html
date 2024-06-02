@@ -1,7 +1,10 @@
-<div class="sidenav">
-    <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Logo">
+<nav>
     <h2>PIRFIRE 2024</h2>
-    {% for item in site.data.navigation %}
-        <a href="{{ site.baseurl }}{{ item.url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a>
-    {% endfor %}
-</div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/call_for_participation">Call for Participation</a></li>
+      <li><a href="/schedule">Schedule</a></li>
+      <li><a href="/organizers">Organizers</a></li>
+    </ul>
+  </nav>
+  
