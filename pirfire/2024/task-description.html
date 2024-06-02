@@ -1,43 +1,47 @@
 <h1>Task Description</h1>
-The goal of the PIR-FIRE Lab is:<ul>
-<li>to facilitate and promote comparative evaluation of Personalized Information Retrieval (IR) by offering research teams a means to evaluate their original personalisation algorithms,
-</li>
-<li>
-to give research teams the means to formally define and evaluate their own novel user profiling approaches for PIR, by providing them with information sources about real user preferences.
-</li>
-</ul>
-<br> 
-The PIR-FIRE use data from  <a href="https://stackexchange.com/">StackExchange</a>, a very popular community Question Answering (cQA) platform.
-The dataset is composed of questions, and their answers, collected from fifty communities, which can be categorized under the large umbrella of humanistic communities.  
-The dump is curated and merged to tackle the cQA task as a retrieval task.
-<br> 
-In details, the first edition of PIR-FIRE consist of two tasks:
+<p>
+  The goal of the PIR-FIRE Lab is:<ul>
+  <li>to facilitate and promote comparative evaluation of Personalized Information Retrieval (IR) by offering research teams a means to evaluate their original personalisation algorithms,
+  </li>
+  <li>
+  to give research teams the means to formally define and evaluate their own novel user profiling approaches for PIR, by providing them with information sources about real user preferences.
+  </li>
+  </ul>
+</p>
+<p>
+  The PIR-FIRE use data from  <a href="https://stackexchange.com/">StackExchange</a>, a very popular community Question Answering (cQA) platform.
+  The dataset is composed of questions, and their answers, collected from fifty communities, which can be categorized under the large umbrella of humanistic communities.  
+  The dump is curated and merged to tackle the cQA task as a retrieval task.
+</p> 
 
-<ul>
-  <br> 
-  <li>Task 1: Standard Information Retrieval</li>
-  <br> 
-  <li>Task 2: Prompt-based Information Retrieval</li>
-</ul>
+<p>
+  In details, the first edition of PIR-FIRE consist of two tasks:
+  <ul>
+    <br> 
+    <li>Task 1: Standard Information Retrieval</li>
+    <br> 
+    <li>Task 2: Prompt-based Information Retrieval</li>
+  </ul>
+</p>
 
 <h1>Task 1: Standard Information Retrieval</h1>
-    
-The cQA task will be tackled as a standard ad-hoc IR task, where the questions are going to be considered as the queries, and the collection, from which the answers will be retrieved, is composed by all the answers available in the dataset. 
-In this case, personalization can be tackled using any standard or novel technique to create a user profile and inject it in the retrieval model.
-We provide multiple baselines that utilize, as first stage retrievers, both classical approaches such as BM25, and neural approaches based on  <a href="https://huggingface.co/google-bert/bert-base-uncased">BERT-like models</a> . 
-As a second stage, we provide re-rankers, using cross-encoders, like <a href="https://huggingface.co/castorini/monot5-base-msmarco">Mono-T5</a>, for non-personalized baselines, and for personalized baselines, using of a mix of tags and historical documents related to the users and weighted according to their importance for the current question.
-
+<p>
+  The cQA task will be tackled as a standard ad-hoc IR task, where the questions are going to be considered as the queries, and the collection, from which the answers will be retrieved, is composed by all the answers available in the dataset. 
+  In this case, personalization can be tackled using any standard or novel technique to create a user profile and inject it in the retrieval model.
+  We provide multiple baselines that utilize, as first stage retrievers, both classical approaches such as BM25, and neural approaches based on  <a href="https://huggingface.co/google-bert/bert-base-uncased">BERT-like models</a> . 
+  As a second stage, we provide re-rankers, using cross-encoders, like <a href="https://huggingface.co/castorini/monot5-base-msmarco">Mono-T5</a>, for non-personalized baselines, and for personalized baselines, using of a mix of tags and historical documents related to the users and weighted according to their importance for the current question.
+</p>
 
 <h1>Task 2: Prompt-based Information Retrieval</h1>
 
-The prompt-based baselines personalise the results by using models like <a href="https://huggingface.co/microsoft/Phi-3-mini-4k-instruct">Phi-3</a> and <a href="https://openai.com/index/gpt-4/">GPT</a> with prompts similar to the following one: 
-<br> 
-<br> 
-To which degree between 0 and 1 does the document <em>DOCUMENT</em> answer the question <em>QUESTION</em>, and is relevant to a user with the following profile <em>USER PROFILE</em>
-<br> 
-<br> 
-The <em>USER PROFILE</em> is a series of user interests that are inferred from their activities and ordered according to their timestamp (most recent first) and importance.
-
+<p>
+  The prompt-based baselines personalise the results by using models like <a href="https://huggingface.co/microsoft/Phi-3-mini-4k-instruct">Phi-3</a> and <a href="https://openai.com/index/gpt-4/">GPT</a> with prompts similar to the following one: 
+  <br> 
+  To which degree between 0 and 1 does the document <em>DOCUMENT</em> answer the question <em>QUESTION</em>, and is relevant to a user with the following profile <em>USER PROFILE</em>
+  <br> 
+  <br> 
+  The <em>USER PROFILE</em> is a series of user interests that are inferred from their activities and ordered according to their timestamp (most recent first) and importance.
+</p>
 
 
 
