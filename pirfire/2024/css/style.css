@@ -9,15 +9,19 @@ body {
 .sidenav {
     width: 250px;
     background-color: #111;
-    height: 100vh;
+    height: 80vh;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 20px;
+    left: 1px;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
+    border-top-right-radius: 20px; /* Add some roundness to the top-right corner */
+    border-bottom-right-radius: 20px; /* Add some roundness to the bottom-right corner */
+    border-top-left-radius: 20px; /* Add some roundness to the top-right corner */
+    border-bottom-left-radius: 20px; /* Add some roundness to the bottom-right corner */
 }
 
 .sidenav img {
@@ -92,11 +96,14 @@ tr:hover {
 
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 0px;
     background-color: #111;
     color: white;
     position: fixed;
     width: 100%;
     bottom: 0;
     left: 0;
+    border-top-right-radius: 20px; /* Add some roundness to the top-right corner */
+    border-top-left-radius: 20px; /* Add some roundness to the bottom-right corner */
+    
 }
