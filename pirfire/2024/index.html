@@ -17,7 +17,13 @@
     <script>
         function loadContent(page) {
             fetch(page)
-                .then(response => response.text())
+                fetch(`_htmldocs/${page}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Page not found');
+                    }
+                    return response.text();
+                })
                 .then(data => {
                     document.getElementById('main-content').innerHTML = data;
                     // Remove active class from all links
@@ -26,6 +32,10 @@
                     });
                     // Add active class to the clicked link
                     document.querySelector(`a[href="#${page.split('.')[0]}"]`).classList.add('active');
+                })
+                .catch(error => {
+                    console.error(error);
+                    loadContent('404.html');
                 });
         }
 
