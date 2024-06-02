@@ -23,6 +23,8 @@ body {
     border-top-left-radius: 20px; /* Add some roundness to the top-right corner */
     border-bottom-left-radius: 20px; /* Add some roundness to the bottom-right corner */
     transition: width 0.3s, transform 0.3s;
+    overflow-y: auto; /* Make sidebar scrollable vertically */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .sidenav img {
