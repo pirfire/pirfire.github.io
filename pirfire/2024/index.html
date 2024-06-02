@@ -34,7 +34,17 @@
                 })
                 .catch(error => {
                     console.error(error);
-                    loadContent('404.html');
+                    fetch('404.html')
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById('main-content').innerHTML = data;
+                            // Remove active class from all links
+                            document.querySelectorAll('.sidenav a').forEach(link => {
+                                link.classList.remove('active');
+                            });
+                            // Add active class to the clicked link
+                            document.querySelector(`a[href="#${page.split('.')[0]}"]`).classList.add('active');
+                        });
                 });
         }
 
