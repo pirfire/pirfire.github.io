@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Side Menu Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sidebar-container"></div>
+
+    <div class="main-content" id="main-content">
+        
+    </div>
+    
+    <footer>
+        <p>Copyright &copy; PIRFIRE 2024</p>
+    </footer>
+
+    <script>
+        function loadContent(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('main-content').innerHTML = data;
+                    // Remove active class from all links
+                    document.querySelectorAll('.sidenav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    // Add active class to the clicked link
+                    document.querySelector(`a[href="#${page.split('.')[0]}"]`).classList.add('active');
+                });
+        }
+
+        // Load sidebar
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+                // Load initial content
+                loadContent('home.html');
+            });
+    </script>
+</body>
+</html>
