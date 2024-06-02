@@ -31,14 +31,14 @@
             specifically designed to generate personalized responses remains inadequately explored.
         </p>
     </div>
-    
+
     <footer>
         <p>Copyright &copy; PIRFIRE 2024</p>
     </footer>
 
     <script>
         function loadContent(page) {
-            fetch(page)
+            fetch(`_htmldocs/${page}`)
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('main-content').innerHTML = data;
