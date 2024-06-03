@@ -53,12 +53,6 @@ The algorithm for obtaining the visa is given on the first link I added.
 <p>
 <strong>Community</strong>: Academia
 </p>
-<p>
-<strong>User who wrote the quesion</strong>: Stefano Borini
-</p>
-<p>
-<strong>User who wrote the best answer</strong>: user107
-</p>
 </p>
 
 <p>
@@ -76,21 +70,42 @@ The algorithm for obtaining the visa is given on the first link I added.
 <p>
   The cQA task will be tackled as a standard ad-hoc IR task, where the questions are going to be considered as the queries, and the collection, from which the answers will be retrieved, is composed by all the answers available in the dataset. 
   In this case, personalization can be tackled using any standard or novel technique to create a user profile and inject it in the retrieval model.
-  We provide multiple baselines that utilize, as first stage retrievers, both classical approaches such as BM25, and neural approaches based on  <a href="https://huggingface.co/google-bert/bert-base-uncased">BERT-like models</a> . 
-  As a second stage, we provide re-rankers, using cross-encoders, like <a href="https://huggingface.co/castorini/monot5-base-msmarco">Mono-T5</a>, for non-personalized baselines, and for personalized baselines, using of a mix of tags and historical documents related to the users and weighted according to their importance for the current question.
+  We provide multiple baselines that utilize, as first stage retrievers, both classical approaches such as BM25, and neural approaches based on  <a href="https://huggingface.co/google-bert/bert-base-uncased">BERT-like models</a><a href="#BERT"> [1]</a>. 
+  As a second stage, we provide re-rankers, using cross-encoders, like <a href="https://huggingface.co/castorini/monot5-base-msmarco">Mono-T5</a> <a href="#MONOT5">[2]</a>, for non-personalized baselines, and for personalized baselines, using of a mix of tags and historical documents related to the users and weighted according to their importance for the current question.
 </p>
 
 <h1>Task 2: Prompt-based Information Retrieval</h1><div id="Task2"></div>
 
 
 <p>
-  The prompt-based baselines personalise the results by using models like <a href="https://huggingface.co/microsoft/Phi-3-mini-4k-instruct">Phi-3</a> and <a href="https://openai.com/index/gpt-4/">GPT</a> with prompts similar to the following one: 
+  The prompt-based baselines personalise the results by using models like <a href="https://huggingface.co/microsoft/Phi-3-mini-4k-instruct">Phi-3</a> <a href="#PHI">[3]</a> and <a href="https://openai.com/index/gpt-4/">GPT</a> with prompts similar to the following one: 
   <br> 
   To which degree between 0 and 1 does the document <em>DOCUMENT</em> answer the question <em>QUESTION</em>, and is relevant to a user with the following profile <em>USER PROFILE</em>
   <br> 
   <br> 
   The <em>USER PROFILE</em> is a series of user interests that are inferred from their activities and ordered according to their timestamp (most recent first) and importance.
 </p>
+
+<head>
+   <title>Bibliography</title>
+</head>
+<body>
+   <h1>Bibliography</h1>
+   <ol>
+      <li>
+         <p>Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. <cite>Bert: Pre-training of deep bidirectional transformers for language understanding.</cite>, arXiv preprint arXiv:1810.04805. (2018)</p>
+      </li><div id="BERT"></div>
+      <li>
+         <p>Nogueira, R., Jiang, Z., & Lin, J. <cite>Document ranking with a pretrained sequence-to-sequence model. </cite>, arXiv preprint arXiv:2003.06713. (2020)</p>
+      </li><div id="MONOT5"></div>
+      <li>
+         <p>Abdin, M., Jacobs, S. A., Awan, A. A., Aneja, J., Awadallah, A., Awadalla, H., ... & Zhou, X. <cite>Phi-3 technical report: A highly capable language model locally on your phone.</cite>, arXiv preprint arXiv:2404.14219. (2024)</p>
+      </li><div id="PHI"></div>
+      
+     
+   </ol>
+</body>
+
 
 
 
