@@ -15,16 +15,64 @@
 </p> 
 
 <p>
+Here an example of Question, Answer and related Metadata. Each Question is composed by a <em>Title</em>, which is a brief summary of the question, and a <em>Body</em>, which gives the context and the final question. 
+</p> 
+
+<p><strong>Question</strong>:
+<ul>
+  <li>
+  <em>Title</em>:What kind of Visa is required to work in Academia in Japan?
+</li>
+<li>
+   <em>Body</em>:
+
+As from title. What kind of visa class do I have to apply for, in order to work as an academic in Japan ?
+
+</li>
+</ul>
+<strong>Answer</strong>:
+
+This might help or this. Here is the crux of the information:
+
+The period of stay is quoted as 3 years/1 year with the following documents needed:
+
+Passport
+One visa application form (nationals of Russia or NIS countries need to submit two visa application forms)
+One photograph (nationals of Russia or NIS countries need to submit two photographs)
+Certificate of Eligibility (Note) - the original and one copy
+
+This visa applied for Long-term stay for the following occupations:
+
+Working visa: professor, artist, religious activities, journalist, investor/business manager, legal/accounting services, medical services, researcher, instructor, engineer, specialist in humanities/International Services
+
+The algorithm for obtaining the visa is given on the first link I added. 
+
+<p>
+<strong>Tags</strong>: job-search, visa, japan
+</p>
+<p>
+<strong>Community</strong>: Academia
+</p>
+<p>
+<strong>User who wrote the quesion</strong>: Stefano Borini
+</p>
+<p>
+<strong>User who wrote the best answer</strong>: user107
+</p>
+</p>
+
+<p>
   In details, the first edition of PIR-FIRE consist of two tasks:
   <ul>
     <br> 
-    <li>Task 1: Standard Information Retrieval</li>
+    <li><a href="#Task1">Task1</a>: Standard Information Retrieval</li>
     <br> 
-    <li>Task 2: Prompt-based Information Retrieval</li>
+    <li><a href="#Task2">Task2</a>: Prompt-based Information Retrieval</li>
   </ul>
 </p>
 
-<h1>Task 1: Standard Information Retrieval</h1>
+<h1>Task 1: Standard Information Retrieval</h1><div id="Task1"></div>
+
 <p>
   The cQA task will be tackled as a standard ad-hoc IR task, where the questions are going to be considered as the queries, and the collection, from which the answers will be retrieved, is composed by all the answers available in the dataset. 
   In this case, personalization can be tackled using any standard or novel technique to create a user profile and inject it in the retrieval model.
@@ -32,7 +80,8 @@
   As a second stage, we provide re-rankers, using cross-encoders, like <a href="https://huggingface.co/castorini/monot5-base-msmarco">Mono-T5</a>, for non-personalized baselines, and for personalized baselines, using of a mix of tags and historical documents related to the users and weighted according to their importance for the current question.
 </p>
 
-<h1>Task 2: Prompt-based Information Retrieval</h1>
+<h1>Task 2: Prompt-based Information Retrieval</h1><div id="Task2"></div>
+
 
 <p>
   The prompt-based baselines personalise the results by using models like <a href="https://huggingface.co/microsoft/Phi-3-mini-4k-instruct">Phi-3</a> and <a href="https://openai.com/index/gpt-4/">GPT</a> with prompts similar to the following one: 
@@ -42,7 +91,6 @@
   <br> 
   The <em>USER PROFILE</em> is a series of user interests that are inferred from their activities and ordered according to their timestamp (most recent first) and importance.
 </p>
-
 
 
 
