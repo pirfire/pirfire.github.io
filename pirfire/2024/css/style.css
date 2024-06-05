@@ -130,20 +130,28 @@ footer {
 
 .image-text-container {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
     margin-bottom: 20px;
-    border-radius: 50%;
 }
 
 .image-text-container img {
-    width: 18%;
+    width: 110px;
+    height: 110px;
     margin-right: 10px;
     border-radius: 50%;
 }
 
+.image-text-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    height: 110px;
+}
+
 .image-text-container p {
-    flex-grow: 1;
+    margin: 0;
 }
 
 @media (max-width: 768px) {
