@@ -57,10 +57,10 @@
                 // Load initial content
                 // loadContent('home.html');
                 // Load initial content based on URL fragment
-                window.addEventListener('load', () => {
-                    const page = window.location.hash.substring(1) || 'home';
-                    loadContent(`${page}.html`);
-                });
+                // window.addEventListener('load', () => {
+                const init_page = window.location.hash.substring(1) || 'home';
+                loadContent(`${init_page}.html`);
+                // });
             });
 
         // Show or hide the sidebar  
