@@ -55,7 +55,12 @@
             .then(data => {
                 document.getElementById('sidebar-container').innerHTML = data;
                 // Load initial content
-                loadContent('home.html');
+                // loadContent('home.html');
+                // Load initial content based on URL fragment
+                window.addEventListener('load', () => {
+                    const page = window.location.hash.substring(1) || 'home';
+                    loadContent(`${page}.html`);
+                });
             });
 
         // Show or hide the sidebar  
